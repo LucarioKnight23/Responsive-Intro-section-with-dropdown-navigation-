@@ -24,9 +24,9 @@ for (i = 0; i < dropdown.length; i++) {
 let el = document.getElementsByClassName("image");
 
 if (screen.width > 1000) {
-  el[0].src = "images/image-hero-desktop.png";
+  el[0].src = "image-hero-desktop.png";
 }
 
 else {
-  el[0].src = "images/image-hero-mobile.png";
+  el[0].src = "image-hero-mobile.png";
 }
