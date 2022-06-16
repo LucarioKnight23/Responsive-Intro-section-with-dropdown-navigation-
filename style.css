@@ -1,0 +1,287 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 41%);
+  font-family: 'Epilogue', sans-serif;
+}
+
+.snap {
+  margin: 4vh 4vw;
+  height: 5.1vh;
+}
+
+.image {
+  height: 35vh;
+}
+
+main {
+  height: 34vh;
+  text-align: center;
+  padding: 1vh 3vw;
+  margin: auto;
+}
+
+h1 {
+  color: hsl(0, 0%, 8%);
+  font-size: 4vh;
+  margin: 4vh 0 1vh;
+}
+
+p {
+  font-size: 2vh;
+}
+
+.learnMore {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 2vh 5vw;
+  display: inline-block;
+  text-decoration: none;
+  margin: 1vh 0 2vh;
+}
+
+.logo {
+  width: 20vw;
+  display: inline-block;
+  padding: 1vh 1vw;
+  margin: auto;
+}
+
+.logo img {
+  width: 15vw;
+}
+
+.logoholder {
+  margin: 2vh 0;
+}
+
+
+#openbtn {
+  cursor: pointer;
+  padding: 4vh 4vw;
+  border: none;
+  position: fixed;
+  height: 3.5vh;
+  top: 0;
+  right: 0;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.navbar {
+  height: 100%;
+  width: 60vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: hsl(0, 0%, 98%);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+}
+
+/* Style the navbar links and the dropdown button */
+.navbar a,
+.dropdown-btn {
+  padding: 12px 10px 12px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.navbar a:hover,
+.dropdown-btn:hover {
+  color: hsl(0, 0%, 8%);
+}
+
+.navbar #closebtn {
+  position: absolute;
+  top: 7px;
+  left: 185px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: hsl(0, 0%, 98%);
+  padding-left: 20px;
+}
+
+.dropdown-container a img {
+  padding-right: 10px;
+}
+
+.log-reg a {
+  text-align: center;
+  padding: 0;
+  margin: 25px auto;
+}
+
+#reg {
+  width: max-content;
+  padding: 10px 60px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  #closebtn,
+  #openbtn {
+    display: none;
+    position: static !important;
+  }
+
+  .navbar {
+    display: block;
+    width: calc(100% - 130px);
+    position: static;
+    height: 65px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    align-items: center;
+  }
+
+  .navbar a,
+  .dropdown-btn,
+  .log-reg {
+    display: inline-block;
+    width: 90px;
+    padding: 0;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .log-reg {
+    width: 180px;
+    grid-column: 12/13;
+  }
+
+  .snap {
+    float: left;
+    margin: 25px;
+    width: 80px;
+  }
+
+  .active+.dropdown-container {
+    position: absolute;
+    top: 65px;
+  }
+
+  .active+.dropdown-container a {
+    display: block;
+    width: 130px;
+  }
+
+  .log-reg a {
+    margin: 0;
+  }
+
+  #reg {
+    padding: 10px 10px;
+  }
+
+  .image {
+    float: right;
+    width: 500px;
+    height: 475px;
+  }
+
+  main {
+    display: inline-block;
+    width: 550px;
+    text-align: left;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  h1 {
+    font-size: 82px;
+  }
+
+  p {
+    font-size: 18px;
+    padding: 20px 50px 30px 0px;
+  }
+
+  .learnMore {
+    margin: 20px 0;
+  }
+}
+
+/*
+    differnce between collapsing sidebar from w3s and fixed sidenav deom w3s
+    - sidebar/navbar:  tranistion and width (padding too but choose 20px one)
+    - sidebar a/navbar a: just some extra properties in case any other element is used in place of a for dropdown-btn, use them
+    - same color change on hover at these a
+    - sidebar has extra css for close button, keep it
+    - altered css for open button
+    - nothing more
+
+Optional: Style the caret down icon
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+css for collapsing sidebar
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+*/
